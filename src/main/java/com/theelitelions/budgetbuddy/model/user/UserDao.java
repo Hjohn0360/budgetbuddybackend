@@ -17,6 +17,7 @@ public class UserDao {
         repository.save(user);
     }
 
+    //Gives a list of all the users
     public List<User> getAllUsers(){
         List<User> users = new ArrayList<>();
         Streamable.of(repository.findAll())
