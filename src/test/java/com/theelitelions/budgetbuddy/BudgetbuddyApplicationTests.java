@@ -6,6 +6,8 @@ import com.theelitelions.budgetbuddy.model.budget.Budget;
 import com.theelitelions.budgetbuddy.model.budget.BudgetDao;
 import com.theelitelions.budgetbuddy.model.user.User;
 import com.theelitelions.budgetbuddy.model.user.UserDao;
+import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReport;
+import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReportDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +20,8 @@ class BudgetbuddyApplicationTests {
 	@Autowired
 	//private UserDao userDao;
 	//private AppDao appDao;
-	private BudgetDao budgetDao;
+	//private BudgetDao budgetDao;
+	private YearlyReportDao yearlyReportDao;
 
 	//The test won't run if it's commented out
 /*
@@ -63,6 +66,8 @@ class BudgetbuddyApplicationTests {
 
 
 	 */
+
+	/*
 	//@Test
 	void addBudgetTest(){
 		Budget budget = new Budget();
@@ -73,11 +78,32 @@ class BudgetbuddyApplicationTests {
 		budgetDao.save(budget);
 	}
 
-	@Test
+	//@Test
 	void getAllBudgetsThenDeleteThem(){
 		List<Budget> budgets = budgetDao.getAllBudgets();
 		for (Budget budget : budgets){
 			budgetDao.delete(budget);
+		}
+	}
+
+	 */
+
+	//@Test
+	void addYearlyReportTest(){
+		YearlyReport yearlyReport = new YearlyReport();
+		yearlyReport.setAnnuel_amount_made(150000);
+		yearlyReport.setAmount_made_from_investments(15000);
+		yearlyReport.setAnnuel_amount_saved(60000);
+		yearlyReport.setAnnuel_amount_spent(35000);
+		yearlyReport.setEnd_of_the_year(true);
+		yearlyReportDao.save(yearlyReport);
+	}
+
+	@Test
+	void getAllYearlyReportsThenDeleteThem(){
+		List<YearlyReport> yearlyReports = yearlyReportDao.getAllYearlyReports();
+		for (YearlyReport yearlyReport : yearlyReports){
+			yearlyReportDao.delete(yearlyReport);
 		}
 	}
 
