@@ -18,14 +18,14 @@ import java.util.List;
 class BudgetbuddyApplicationTests {
 
 	@Autowired
-	//private UserDao userDao;
+	private UserDao userDao;
 	//private AppDao appDao;
 	//private BudgetDao budgetDao;
-	private YearlyReportDao yearlyReportDao;
+	//private YearlyReportDao yearlyReportDao;
 
 	//The test won't run if it's commented out
-/*
-	//@Test
+
+	@Test
 	void addUserTest() {
 		User user = new User();
 		user.setFirst_name("John");
@@ -43,7 +43,7 @@ class BudgetbuddyApplicationTests {
 		}
 	}
 
- */
+
 	/*
 	//@Test
 	void addAppTest(){
@@ -88,6 +88,7 @@ class BudgetbuddyApplicationTests {
 
 	 */
 
+	/*
 	//@Test
 	void addYearlyReportTest(){
 		YearlyReport yearlyReport = new YearlyReport();
@@ -99,12 +100,14 @@ class BudgetbuddyApplicationTests {
 		yearlyReportDao.save(yearlyReport);
 	}
 
-	@Test
+	//@Test
 	void getAllYearlyReportsThenDeleteThem(){
 		List<YearlyReport> yearlyReports = yearlyReportDao.getAllYearlyReports();
 		for (YearlyReport yearlyReport : yearlyReports){
 			yearlyReportDao.delete(yearlyReport);
 		}
 	}
+
+	 */
 
 }
