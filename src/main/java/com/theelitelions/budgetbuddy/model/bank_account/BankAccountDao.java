@@ -1,6 +1,5 @@
 package com.theelitelions.budgetbuddy.model.bank_account;
 
-import com.theelitelions.budgetbuddy.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Service;
@@ -12,7 +11,7 @@ import java.util.List;
 public class BankAccountDao {
 
     @Autowired
-    private BanKAccountRepository repository;
+    private BankAccountRepository repository;
 
     public BankAccount save(BankAccount bankAccount){
         return repository.save(bankAccount);

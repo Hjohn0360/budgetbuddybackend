@@ -116,18 +116,18 @@ class BudgetbuddyApplicationTests {
 
 	 */
 
-	//@Test
+	@Test
 	void addBankAccountTest(){
 		BankAccount bankAccount = new BankAccount();
 		bankAccount.setBank_connected(true);
-		bankAccount.setAccount_number(29844238);
-		bankAccount.setRouting_number(6383589);
-		bankAccount.setBank_name("Discover");
-		bankAccount.setMonthly_earnings(12340.58);
+		bankAccount.setAccount_number(87234925);
+		bankAccount.setRouting_number(3495902);
+		bankAccount.setBank_name("Chase");
+		bankAccount.setMonthly_earnings(96436.58);
 		bankAccountDao.save(bankAccount);
 	}
 
-	@Test
+	//@Test
 	void getAllBankAccountsThenDeleteThem(){
 		List<BankAccount> bankAccounts = bankAccountDao.getAllBankAccounts();
 		for (BankAccount bankAccount : bankAccounts){
