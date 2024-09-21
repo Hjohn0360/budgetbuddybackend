@@ -2,6 +2,8 @@ package com.theelitelions.budgetbuddy;
 
 import com.theelitelions.budgetbuddy.model.app.App;
 import com.theelitelions.budgetbuddy.model.app.AppDao;
+import com.theelitelions.budgetbuddy.model.bank_account.BankAccount;
+import com.theelitelions.budgetbuddy.model.bank_account.BankAccountDao;
 import com.theelitelions.budgetbuddy.model.budget.Budget;
 import com.theelitelions.budgetbuddy.model.budget.BudgetDao;
 import com.theelitelions.budgetbuddy.model.user.User;
@@ -18,14 +20,16 @@ import java.util.List;
 class BudgetbuddyApplicationTests {
 
 	@Autowired
-	private UserDao userDao;
+	//private UserDao userDao;
 	//private AppDao appDao;
 	//private BudgetDao budgetDao;
 	//private YearlyReportDao yearlyReportDao;
+	private BankAccountDao bankAccountDao;
 
 	//The test won't run if it's commented out
 
-	@Test
+	/*
+	//@Test
 	void addUserTest() {
 		User user = new User();
 		user.setFirst_name("John");
@@ -42,6 +46,8 @@ class BudgetbuddyApplicationTests {
 			userDao.delete(user);
 		}
 	}
+
+	 */
 
 
 	/*
@@ -109,5 +115,24 @@ class BudgetbuddyApplicationTests {
 	}
 
 	 */
+
+	//@Test
+	void addBankAccountTest(){
+		BankAccount bankAccount = new BankAccount();
+		bankAccount.setBank_connected(true);
+		bankAccount.setAccount_number(29844238);
+		bankAccount.setRouting_number(6383589);
+		bankAccount.setBank_name("Discover");
+		bankAccount.setMonthly_earnings(12340.58);
+		bankAccountDao.save(bankAccount);
+	}
+
+	@Test
+	void getAllBankAccountsThenDeleteThem(){
+		List<BankAccount> bankAccounts = bankAccountDao.getAllBankAccounts();
+		for (BankAccount bankAccount : bankAccounts){
+			bankAccountDao.delete(bankAccount);
+		}
+	}
 
 }
