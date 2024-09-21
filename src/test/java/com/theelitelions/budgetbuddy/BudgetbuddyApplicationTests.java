@@ -2,6 +2,8 @@ package com.theelitelions.budgetbuddy;
 
 import com.theelitelions.budgetbuddy.model.app.App;
 import com.theelitelions.budgetbuddy.model.app.AppDao;
+import com.theelitelions.budgetbuddy.model.budget.Budget;
+import com.theelitelions.budgetbuddy.model.budget.BudgetDao;
 import com.theelitelions.budgetbuddy.model.user.User;
 import com.theelitelions.budgetbuddy.model.user.UserDao;
 import org.junit.jupiter.api.Test;
@@ -15,7 +17,8 @@ class BudgetbuddyApplicationTests {
 
 	@Autowired
 	//private UserDao userDao;
-	private AppDao appDao;
+	//private AppDao appDao;
+	private BudgetDao budgetDao;
 
 	//The test won't run if it's commented out
 /*
@@ -38,7 +41,8 @@ class BudgetbuddyApplicationTests {
 	}
 
  */
-	@Test
+	/*
+	//@Test
 	void addAppTest(){
 		App app = new App();
 		app.setName("DoorDash");
@@ -54,6 +58,26 @@ class BudgetbuddyApplicationTests {
 		List<App> apps = appDao.getAllApps();
 		for (App app : apps){
 			appDao.delete(app);
+		}
+	}
+
+
+	 */
+	//@Test
+	void addBudgetTest(){
+		Budget budget = new Budget();
+		budget.setAmount_to_invest(200);
+		budget.setSpending_limit(40);
+		budget.setEmergency_fund(50);
+		budget.setAmount_to_save(120);
+		budgetDao.save(budget);
+	}
+
+	@Test
+	void getAllBudgetsThenDeleteThem(){
+		List<Budget> budgets = budgetDao.getAllBudgets();
+		for (Budget budget : budgets){
+			budgetDao.delete(budget);
 		}
 	}
 
