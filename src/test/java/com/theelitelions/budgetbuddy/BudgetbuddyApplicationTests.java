@@ -32,10 +32,10 @@ class BudgetbuddyApplicationTests {
 	@Test
 	void addUserTest() {
 		User user = new User();
-		user.setFirst_name("Peter");
-		user.setLast_name("Parker");
-		user.setAge(18);
-		user.setUsername("ParkerPete06");
+		user.setFirst_name("Clark");
+		user.setLast_name("Kent");
+		user.setAge(30);
+		user.setUsername("CKent96");
 		userDao.save(user);
 	}
 
