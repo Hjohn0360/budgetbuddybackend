@@ -20,22 +20,22 @@ import java.util.List;
 class BudgetbuddyApplicationTests {
 
 	@Autowired
-	//private UserDao userDao;
+	private UserDao userDao;
 	//private AppDao appDao;
 	//private BudgetDao budgetDao;
 	//private YearlyReportDao yearlyReportDao;
-	private BankAccountDao bankAccountDao;
+	//private BankAccountDao bankAccountDao;
 
 	//The test won't run if it's commented out
 
-	/*
-	//@Test
+
+	@Test
 	void addUserTest() {
 		User user = new User();
-		user.setFirst_name("John");
-		user.setLast_name("Harris");
-		user.setAge(21);
-		user.setUsername("Hjohn0360");
+		user.setFirst_name("Peter");
+		user.setLast_name("Parker");
+		user.setAge(18);
+		user.setUsername("ParkerPete06");
 		userDao.save(user);
 	}
 
@@ -47,7 +47,7 @@ class BudgetbuddyApplicationTests {
 		}
 	}
 
-	 */
+
 
 
 	/*
@@ -115,15 +115,16 @@ class BudgetbuddyApplicationTests {
 	}
 
 	 */
-
-	@Test
+/*
+	//@Test
 	void addBankAccountTest(){
 		BankAccount bankAccount = new BankAccount();
 		bankAccount.setBank_connected(true);
-		bankAccount.setAccount_number(87234925);
-		bankAccount.setRouting_number(3495902);
+		bankAccount.setAccount_number(12568439);
+		bankAccount.setRouting_number(9128474);
 		bankAccount.setBank_name("Chase");
-		bankAccount.setMonthly_earnings(96436.58);
+		bankAccount.setMonthly_earnings(32871.51);
+		bankAccount.setEncryption("Asymmetric");
 		bankAccountDao.save(bankAccount);
 	}
 
@@ -134,5 +135,7 @@ class BudgetbuddyApplicationTests {
 			bankAccountDao.delete(bankAccount);
 		}
 	}
+
+ */
 
 }

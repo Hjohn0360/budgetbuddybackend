@@ -4,14 +4,12 @@ import com.theelitelions.budgetbuddy.model.user.User;
 import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReport;
 import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReportDao;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api")
 public class YearlyReportController {
 
     @Autowired
