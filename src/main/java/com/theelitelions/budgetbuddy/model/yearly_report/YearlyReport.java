@@ -18,7 +18,6 @@ public class YearlyReport {
     private double annuel_amount_invested;
     private double what_if_savings_amount;
     private int bank_account_id;
-    private int user_id;
 
     public double getAnnuel_amount_made() {
         return annuel_amount_made;
@@ -84,13 +83,6 @@ public class YearlyReport {
         this.bank_account_id = bank_account_id;
     }
 
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
 
     @Override
     public String toString(){
@@ -104,7 +96,6 @@ public class YearlyReport {
                 ", annuel amount invested=" + annuel_amount_invested + '\'' +
                 ", what if savings amount='" + what_if_savings_amount + '\'' +
                 ", bank account id='" + bank_account_id + '\'' +
-                ", user id='" + user_id + '\'' +
                 '}';
     }
 }

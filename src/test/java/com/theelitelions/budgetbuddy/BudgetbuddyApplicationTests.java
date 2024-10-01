@@ -2,6 +2,8 @@ package com.theelitelions.budgetbuddy;
 
 import com.theelitelions.budgetbuddy.model.app.App;
 import com.theelitelions.budgetbuddy.model.app.AppDao;
+import com.theelitelions.budgetbuddy.model.bank_account.BankAccount;
+import com.theelitelions.budgetbuddy.model.bank_account.BankAccountDao;
 import com.theelitelions.budgetbuddy.model.budget.Budget;
 import com.theelitelions.budgetbuddy.model.budget.BudgetDao;
 import com.theelitelions.budgetbuddy.model.user.User;
@@ -18,20 +20,22 @@ import java.util.List;
 class BudgetbuddyApplicationTests {
 
 	@Autowired
-	//private UserDao userDao;
+	private UserDao userDao;
 	//private AppDao appDao;
 	//private BudgetDao budgetDao;
-	private YearlyReportDao yearlyReportDao;
+	//private YearlyReportDao yearlyReportDao;
+	//private BankAccountDao bankAccountDao;
 
 	//The test won't run if it's commented out
-/*
-	//@Test
+
+
+	@Test
 	void addUserTest() {
 		User user = new User();
-		user.setFirst_name("John");
-		user.setLast_name("Harris");
-		user.setAge(21);
-		user.setUsername("Hjohn0360");
+		user.setFirst_name("Clark");
+		user.setLast_name("Kent");
+		user.setAge(30);
+		user.setUsername("CKent96");
 		userDao.save(user);
 	}
 
@@ -43,7 +47,9 @@ class BudgetbuddyApplicationTests {
 		}
 	}
 
- */
+
+
+
 	/*
 	//@Test
 	void addAppTest(){
@@ -88,6 +94,7 @@ class BudgetbuddyApplicationTests {
 
 	 */
 
+	/*
 	//@Test
 	void addYearlyReportTest(){
 		YearlyReport yearlyReport = new YearlyReport();
@@ -99,12 +106,36 @@ class BudgetbuddyApplicationTests {
 		yearlyReportDao.save(yearlyReport);
 	}
 
-	@Test
+	//@Test
 	void getAllYearlyReportsThenDeleteThem(){
 		List<YearlyReport> yearlyReports = yearlyReportDao.getAllYearlyReports();
 		for (YearlyReport yearlyReport : yearlyReports){
 			yearlyReportDao.delete(yearlyReport);
 		}
 	}
+
+	 */
+/*
+	//@Test
+	void addBankAccountTest(){
+		BankAccount bankAccount = new BankAccount();
+		bankAccount.setBank_connected(true);
+		bankAccount.setAccount_number(12568439);
+		bankAccount.setRouting_number(9128474);
+		bankAccount.setBank_name("Chase");
+		bankAccount.setMonthly_earnings(32871.51);
+		bankAccount.setEncryption("Asymmetric");
+		bankAccountDao.save(bankAccount);
+	}
+
+	//@Test
+	void getAllBankAccountsThenDeleteThem(){
+		List<BankAccount> bankAccounts = bankAccountDao.getAllBankAccounts();
+		for (BankAccount bankAccount : bankAccounts){
+			bankAccountDao.delete(bankAccount);
+		}
+	}
+
+ */
 
 }
