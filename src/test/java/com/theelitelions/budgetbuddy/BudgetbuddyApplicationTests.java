@@ -98,10 +98,10 @@ class BudgetbuddyApplicationTests {
 	//@Test
 	void addYearlyReportTest(){
 		YearlyReport yearlyReport = new YearlyReport();
-		yearlyReport.setAnnuel_amount_made(150000);
+		yearlyReport.setAnnual_amount_made(150000);
 		yearlyReport.setAmount_made_from_investments(15000);
-		yearlyReport.setAnnuel_amount_saved(60000);
-		yearlyReport.setAnnuel_amount_spent(35000);
+		yearlyReport.setAnnual_amount_saved(60000);
+		yearlyReport.setAnnual_amount_spent(35000);
 		yearlyReport.setEnd_of_the_year(true);
 		yearlyReportDao.save(yearlyReport);
 	}

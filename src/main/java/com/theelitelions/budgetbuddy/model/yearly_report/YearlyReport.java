@@ -10,21 +10,21 @@ public class YearlyReport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private double annuel_amount_made;
+    private double annual_amount_made;
     private double amount_made_from_investments;
     private boolean end_of_the_year;
-    private double annuel_amount_spent;
-    private double annuel_amount_saved;
-    private double annuel_amount_invested;
+    private double annual_amount_spent;
+    private double annual_amount_saved;
+    private double annual_amount_invested;
     private double what_if_savings_amount;
     private int bank_account_id;
 
-    public double getAnnuel_amount_made() {
-        return annuel_amount_made;
+    public double getAnnual_amount_made() {
+        return annual_amount_made;
     }
 
-    public void setAnnuel_amount_made(double annuel_amount_made) {
-        this.annuel_amount_made = annuel_amount_made;
+    public void setAnnual_amount_made(double annual_amount_made) {
+        this.annual_amount_made = annual_amount_made;
     }
 
     public double getAmount_made_from_investments() {
@@ -43,28 +43,28 @@ public class YearlyReport {
         this.end_of_the_year = end_of_the_year;
     }
 
-    public double getAnnuel_amount_spent() {
-        return annuel_amount_spent;
+    public double getAnnual_amount_spent() {
+        return annual_amount_spent;
     }
 
-    public void setAnnuel_amount_spent(double annuel_amount_spent) {
-        this.annuel_amount_spent = annuel_amount_spent;
+    public void setAnnual_amount_spent(double annual_amount_spent) {
+        this.annual_amount_spent = annual_amount_spent;
     }
 
-    public double getAnnuel_amount_saved() {
-        return annuel_amount_saved;
+    public double getAnnual_amount_saved() {
+        return annual_amount_saved;
     }
 
-    public void setAnnuel_amount_saved(double annuel_amount_saved) {
-        this.annuel_amount_saved = annuel_amount_saved;
+    public void setAnnual_amount_saved(double annual_amount_saved) {
+        this.annual_amount_saved = annual_amount_saved;
     }
 
-    public double getAnnuel_amount_invested() {
-        return annuel_amount_invested;
+    public double getAnnual_amount_invested() {
+        return annual_amount_invested;
     }
 
-    public void setAnnuel_amount_invested(double annuel_amount_invested) {
-        this.annuel_amount_invested = annuel_amount_invested;
+    public void setAnnual_amount_invested(double annual_amount_invested) {
+        this.annual_amount_invested = annual_amount_invested;
     }
 
     public double getWhat_if_savings_amount() {
@@ -88,12 +88,12 @@ public class YearlyReport {
     public String toString(){
         return "Yearly Report{" +
                 "id=" + id +
-                ", annuel amount made='" + annuel_amount_made + '\'' +
+                ", annual amount made='" + annual_amount_made + '\'' +
                 ", amount made from investments='" + amount_made_from_investments + '\'' +
                 ", end of the year='" + end_of_the_year + '\'' +
-                ", annuel amount spent=" + annuel_amount_spent + '\'' +
-                ", annuel amount saved='" + annuel_amount_saved + '\'' +
-                ", annuel amount invested=" + annuel_amount_invested + '\'' +
+                ", annual amount spent=" + annual_amount_spent + '\'' +
+                ", annual amount saved='" + annual_amount_saved + '\'' +
+                ", annual amount invested=" + annual_amount_invested + '\'' +
                 ", what if savings amount='" + what_if_savings_amount + '\'' +
                 ", bank account id='" + bank_account_id + '\'' +
                 '}';
