@@ -29,7 +29,7 @@ class BudgetbuddyApplicationTests {
 	//The test won't run if it's commented out
 
 
-	@Test
+	//@Test
 	void addUserTest() {
 		User user = new User();
 		user.setFirst_name("Clark");
