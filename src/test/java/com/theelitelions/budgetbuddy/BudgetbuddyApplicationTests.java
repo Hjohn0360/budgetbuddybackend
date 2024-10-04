@@ -42,7 +42,7 @@ class BudgetbuddyApplicationTests {
 		userDao.save(user);
 	}
 
-	//@Test
+	@Test
 	void getAllUsersThenDeleteThem(){
 		List<User> users = userDao.getAllUsers();
 		for(User user : users){
