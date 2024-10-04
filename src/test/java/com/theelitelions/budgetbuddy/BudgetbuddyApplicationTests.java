@@ -6,6 +6,8 @@ import com.theelitelions.budgetbuddy.model.bank_account.BankAccount;
 import com.theelitelions.budgetbuddy.model.bank_account.BankAccountDao;
 import com.theelitelions.budgetbuddy.model.budget.Budget;
 import com.theelitelions.budgetbuddy.model.budget.BudgetDao;
+import com.theelitelions.budgetbuddy.model.investment_portfolio.InvestmentPortfolio;
+import com.theelitelions.budgetbuddy.model.investment_portfolio.InvestmentPortfolioDao;
 import com.theelitelions.budgetbuddy.model.user.User;
 import com.theelitelions.budgetbuddy.model.user.UserDao;
 import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReport;
@@ -20,22 +22,23 @@ import java.util.List;
 class BudgetbuddyApplicationTests {
 
 	@Autowired
-	private UserDao userDao;
+	//private UserDao userDao;
 	//private AppDao appDao;
 	//private BudgetDao budgetDao;
 	//private YearlyReportDao yearlyReportDao;
 	//private BankAccountDao bankAccountDao;
+	private InvestmentPortfolioDao investmentPortfolioDao;
 
 	//The test won't run if it's commented out
 
-
+/*
 	//@Test
 	void addUserTest() {
 		User user = new User();
-		user.setFirst_name("Clark");
-		user.setLast_name("Kent");
-		user.setAge(30);
-		user.setUsername("CKent96");
+		user.setFirst_name("Sabrina");
+		user.setLast_name("Lang");
+		user.setAge(22);
+		user.setUsername("CSabrina96");
 		userDao.save(user);
 	}
 
@@ -46,6 +49,8 @@ class BudgetbuddyApplicationTests {
 			userDao.delete(user);
 		}
 	}
+
+ */
 
 
 
@@ -137,5 +142,22 @@ class BudgetbuddyApplicationTests {
 	}
 
  */
+
+	//@Test
+	void addUserTest() {
+		InvestmentPortfolio investmentPortfolio = new InvestmentPortfolio();
+		investmentPortfolio.setUser_id(23);
+		investmentPortfolio.setTotal_annual_return(55.2);
+		investmentPortfolio.setCompany_id(11);
+		investmentPortfolioDao.save(investmentPortfolio);
+	}
+
+	@Test
+	void getAllUsersThenDeleteThem(){
+		List<InvestmentPortfolio> investmentPortfolios = investmentPortfolioDao.getAllInvestmentPortfolios();
+		for(InvestmentPortfolio investmentPortfolio : investmentPortfolios){
+			investmentPortfolioDao.delete(investmentPortfolio);
+		}
+	}
 
 }
