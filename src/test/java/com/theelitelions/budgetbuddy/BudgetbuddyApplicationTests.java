@@ -1,17 +1,7 @@
 package com.theelitelions.budgetbuddy;
 
-import com.theelitelions.budgetbuddy.model.app.App;
-import com.theelitelions.budgetbuddy.model.app.AppDao;
-import com.theelitelions.budgetbuddy.model.bank_account.BankAccount;
-import com.theelitelions.budgetbuddy.model.bank_account.BankAccountDao;
-import com.theelitelions.budgetbuddy.model.budget.Budget;
-import com.theelitelions.budgetbuddy.model.budget.BudgetDao;
-import com.theelitelions.budgetbuddy.model.investment_portfolio.InvestmentPortfolio;
-import com.theelitelions.budgetbuddy.model.investment_portfolio.InvestmentPortfolioDao;
-import com.theelitelions.budgetbuddy.model.user.User;
-import com.theelitelions.budgetbuddy.model.user.UserDao;
-import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReport;
-import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReportDao;
+import com.theelitelions.budgetbuddy.model.bill.Bill;
+import com.theelitelions.budgetbuddy.model.bill.BillDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,7 +17,9 @@ class BudgetbuddyApplicationTests {
 	//private BudgetDao budgetDao;
 	//private YearlyReportDao yearlyReportDao;
 	//private BankAccountDao bankAccountDao;
-	private InvestmentPortfolioDao investmentPortfolioDao;
+	//private InvestmentPortfolioDao investmentPortfolioDao;
+	private BillDao billDao;
+
 
 	//The test won't run if it's commented out
 
@@ -142,9 +134,9 @@ class BudgetbuddyApplicationTests {
 	}
 
  */
-
+/*
 	//@Test
-	void addUserTest() {
+	void addInvestmentPortfolioTest() {
 		InvestmentPortfolio investmentPortfolio = new InvestmentPortfolio();
 		investmentPortfolio.setUser_id(23);
 		investmentPortfolio.setTotal_annual_return(55.2);
@@ -153,11 +145,32 @@ class BudgetbuddyApplicationTests {
 	}
 
 	@Test
-	void getAllUsersThenDeleteThem(){
+	void getAllInvestmentPortfoliosThenDeleteThem(){
 		List<InvestmentPortfolio> investmentPortfolios = investmentPortfolioDao.getAllInvestmentPortfolios();
 		for(InvestmentPortfolio investmentPortfolio : investmentPortfolios){
 			investmentPortfolioDao.delete(investmentPortfolio);
 		}
 	}
+
+ */
+
+	//@Test
+	void addBillTest() {
+		Bill bill = new Bill();
+		bill.setName("Crunchy Roll");
+		bill.setPrice(14.99);
+		bill.setAutomatic_payments_on(false);
+		bill.setRecurring_payment(true);
+		billDao.save(bill);
+	}
+
+	@Test
+	void getAllBillsThenDeleteThem(){
+		List<Bill> bills = billDao.getAllBills();
+		for(Bill bill : bills){
+			billDao.delete(bill);
+		}
+	}
+
 
 }
