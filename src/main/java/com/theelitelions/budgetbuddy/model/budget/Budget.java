@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 public class Budget {
@@ -17,6 +18,8 @@ public class Budget {
     private int app_id;
     private int check_id;
     private int user_id;
+    private LocalDateTime budget_period;
+
 
     public int getId() {
         return id;
@@ -80,6 +83,14 @@ public class Budget {
 
     public void setUser_id(int user_id) {
         this.user_id = user_id;
+    }
+
+    public LocalDateTime getBudget_period() {
+        return budget_period;
+    }
+
+    public void setBudget_period(LocalDateTime budget_period) {
+        this.budget_period = budget_period;
     }
 
     @Override

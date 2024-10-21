@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 public class BankAccount {
@@ -19,6 +20,10 @@ public class BankAccount {
     private int check_id;
     private double monthly_earnings;
     private String encryption;
+    private double account_balance;
+    private LocalDateTime check_frequency;
+    private LocalDateTime date_paid;
+
 
     public int getUser_id() {
         return user_id;
@@ -84,6 +89,30 @@ public class BankAccount {
         this.encryption = encryption;
     }
 
+    public double getAccount_balance(){
+        return account_balance;
+    }
+
+    public void setAccount_balance(double account_balance) {
+        this.account_balance = account_balance;
+    }
+
+    public LocalDateTime getCheck_frequency() {
+        return check_frequency;
+    }
+
+    public void setCheck_frequency(LocalDateTime check_frequency) {
+        this.check_frequency = check_frequency;
+    }
+
+    public LocalDateTime getDate_paid() {
+        return date_paid;
+    }
+
+    public void setDate_paid(LocalDateTime date_paid) {
+        this.date_paid = date_paid;
+    }
+
     @Override
     public String toString(){
         return "User{" +
@@ -96,6 +125,9 @@ public class BankAccount {
                 ", check id=" + check_id + '\'' +
                 ", monthly earnings='" + monthly_earnings + '\'' +
                 ", encryption='" + encryption + '\'' +
+                ", account balance='" + account_balance + '\'' +
+                ", check frequency='" + check_frequency + '\'' +
+                ", date paid='" + date_paid + '\'' +
                 '}';
     }
 }

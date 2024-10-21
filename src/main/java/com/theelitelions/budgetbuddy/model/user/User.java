@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import java.time.LocalDateTime;
 
 @Entity
 public class User {
@@ -18,6 +22,14 @@ public class User {
     private String email;
     private int phone_number;
     private String password;
+    private String address;
+    // -- Date Account was created
+    @CreationTimestamp
+    private LocalDateTime created_at;
+    // -- Date Account Info was modified
+    @UpdateTimestamp
+    private LocalDateTime modified_at;
+
 
     public int getId(){
         return id;
@@ -83,6 +95,30 @@ public class User {
         this.password = password;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public LocalDateTime getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(LocalDateTime created_at) {
+        this.created_at = created_at;
+    }
+
+    public LocalDateTime getModified_at(){
+        return modified_at;
+    }
+
+    public void setModified_at(LocalDateTime modified_at) {
+        this.modified_at = modified_at;
+    }
+
     @Override
     public String toString(){
         return "User{" +
@@ -94,6 +130,9 @@ public class User {
                 ", email='" + email + '\'' +
                 ", phone_number=" + phone_number + '\'' +
                 ", password='" + password + '\'' +
+                ", address='" + address + '\'' +
+                ", created at='" + created_at + '\'' +
+                ", modified at='" + modified_at + '\'' +
                 '}';
     }
 }

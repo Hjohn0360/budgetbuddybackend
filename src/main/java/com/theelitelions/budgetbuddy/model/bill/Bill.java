@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 public class Bill {
@@ -15,8 +16,8 @@ public class Bill {
     private String name;
     private boolean automatic_payments_on;
     private double price;
-    //private int due_date;
-    //private int sign_up_date;
+    private LocalDateTime due_date;
+    private LocalDateTime sign_up_date;
     private boolean recurring_payment;
 
     public int getId() {
@@ -59,6 +60,22 @@ public class Bill {
         this.recurring_payment = recurring_payment;
     }
 
+    public LocalDateTime getDue_date() {
+        return due_date;
+    }
+
+    public void setDue_date(LocalDateTime due_date) {
+        this.due_date = due_date;
+    }
+
+    public LocalDateTime getSign_up_date() {
+        return sign_up_date;
+    }
+
+    public void setSign_up_date(LocalDateTime sign_up_date) {
+        this.sign_up_date = sign_up_date;
+    }
+
     @Override
     public String toString(){
         return "Bill{" +
@@ -67,6 +84,8 @@ public class Bill {
                 ", automatic payments on='" + automatic_payments_on + '\'' +
                 ", price=" + price + '\'' +
                 ", recurring payment=" + recurring_payment + '\'' +
+                ", due date='" + due_date + '\'' +
+                ", sign up date='" + sign_up_date + '\'' +
                 '}';
     }
 }
