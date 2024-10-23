@@ -1,11 +1,16 @@
 package com.theelitelions.budgetbuddy;
 
+import com.theelitelions.budgetbuddy.model.account.Account;
+import com.theelitelions.budgetbuddy.model.account.AccountDao;
 import com.theelitelions.budgetbuddy.model.bill.Bill;
 import com.theelitelions.budgetbuddy.model.bill.BillDao;
+import com.theelitelions.budgetbuddy.model.transaction.Transaction;
+import com.theelitelions.budgetbuddy.model.transaction.TransactionDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @SpringBootTest
@@ -18,7 +23,9 @@ class BudgetbuddyApplicationTests {
 	//private YearlyReportDao yearlyReportDao;
 	//private BankAccountDao bankAccountDao;
 	//private InvestmentPortfolioDao investmentPortfolioDao;
-	private BillDao billDao;
+	//private BillDao billDao;
+	//private AccountDao accountDao;
+	private TransactionDao transactionDao;
 
 
 	//The test won't run if it's commented out
@@ -153,7 +160,7 @@ class BudgetbuddyApplicationTests {
 	}
 
  */
-
+/*
 	//@Test
 	void addBillTest() {
 		Bill bill = new Bill();
@@ -172,5 +179,48 @@ class BudgetbuddyApplicationTests {
 		}
 	}
 
+ */
+
+	/*
+	//@Test
+	void addAccountTest() {
+		Account account = new Account();
+		account.setGoal(5000);
+		account.setCurrentSavings(750);
+		account.setInvestmentName("Coca Cola");
+		account.setYearlyIncome(42000);
+		accountDao.save(account);
+	}
+
+	@Test
+	void getAllAccountsThenDeleteThem(){
+		List<Account> accounts = accountDao.getAllAccounts();
+		for(Account account : accounts){
+			accountDao.delete(account);
+		}
+	}
+
+	 */
+
+/*
+	//@Test
+	void addTransactionTest() {
+		Transaction transaction = new Transaction();
+		transaction.setExpenseName("Groceries");
+		transaction.setExpenseAmount(153.96f);
+		transaction.setDueDate(LocalDate.parse("2024-08-02"));
+		transaction.setAutoPay(false);
+		transactionDao.save(transaction);
+	}
+
+	@Test
+	void getAllTransactionsThenDeleteThem(){
+		List<Transaction> transactions = transactionDao.getAllTransactions();
+		for(Transaction transaction : transactions){
+			transactionDao.delete(transaction);
+		}
+	}
+
+ */
 
 }

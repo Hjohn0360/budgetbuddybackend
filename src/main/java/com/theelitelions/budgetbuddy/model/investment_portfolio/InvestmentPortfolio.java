@@ -47,4 +47,14 @@ public class InvestmentPortfolio {
         this.company_id = company_id;
     }
 
+    @Override
+    public String toString(){
+        return "Investment Portfolio{" +
+                "id=" + id +
+                ", user id=" + user_id + '\'' +
+                ", total annual return=" + total_annual_return + '\'' +
+                ", company id=" + company_id + '\'' +
+                '}';
+    }
+
 }

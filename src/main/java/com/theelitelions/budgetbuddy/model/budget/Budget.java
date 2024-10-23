@@ -1,10 +1,13 @@
 package com.theelitelions.budgetbuddy.model.budget;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.time.LocalDateTime;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.time.LocalDate;
 
 @Entity
 public class Budget {
@@ -18,7 +21,12 @@ public class Budget {
     private int app_id;
     private int check_id;
     private int user_id;
-    private LocalDateTime budget_period;
+    private LocalDate budget_period;
+    private String expenseName;
+    private float expenseAmount;
+    @JsonFormat(pattern = "yyyy-MM-dd", shape = JsonFormat.Shape.STRING)
+    private LocalDate dueDate;
+    private boolean isAutoPay;
 
 
     public int getId() {
@@ -85,12 +93,44 @@ public class Budget {
         this.user_id = user_id;
     }
 
-    public LocalDateTime getBudget_period() {
+    public LocalDate getBudget_period() {
         return budget_period;
     }
 
-    public void setBudget_period(LocalDateTime budget_period) {
+    public void setBudget_period(LocalDate budget_period) {
         this.budget_period = budget_period;
+    }
+
+    public String getExpenseName() {
+        return expenseName;
+    }
+
+    public void setExpenseName(String expenseName) {
+        this.expenseName = expenseName;
+    }
+
+    public float getExpenseAmount() {
+        return expenseAmount;
+    }
+
+    public void setExpenseAmount(float expenseAmount) {
+        this.expenseAmount = expenseAmount;
+    }
+
+    public LocalDate getDueDate() {
+        return dueDate;
+    }
+
+    public void setDueDate(LocalDate dueDate) {
+        this.dueDate = dueDate;
+    }
+
+    public boolean isAutoPay() {
+        return isAutoPay;
+    }
+
+    public void setAutoPay(boolean autoPay) {
+        isAutoPay = autoPay;
     }
 
     @Override
@@ -104,6 +144,10 @@ public class Budget {
                 ", app id='" + app_id + '\'' +
                 ", check id=" + check_id + '\'' +
                 ", user id=" + user_id + '\'' +
+                ", expense name='" + expenseName + '\'' +
+                ", expense amount'" + expenseAmount + '\'' +
+                ", due date'" + dueDate + '\'' +
+                ", Auto Pay'" + isAutoPay + '\'' +
                 '}';
     }
 }

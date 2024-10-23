@@ -84,7 +84,7 @@ public class App {
 
     @Override
     public String toString(){
-        return "User{" +
+        return "App{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", blocked='" + blocked + '\'' +

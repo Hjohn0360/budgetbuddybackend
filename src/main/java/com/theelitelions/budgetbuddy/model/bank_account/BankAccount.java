@@ -115,7 +115,7 @@ public class BankAccount {
 
     @Override
     public String toString(){
-        return "User{" +
+        return "Bank Account{" +
                 "id=" + id +
                 ", user id='" + user_id + '\'' +
                 ", bank connected='" + bank_connected + '\'' +
