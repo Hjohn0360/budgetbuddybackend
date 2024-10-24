@@ -1,5 +1,6 @@
 package com.theelitelions.budgetbuddy.model.budget;
 
+import com.theelitelions.budgetbuddy.model.transaction.Transaction;
 import com.theelitelions.budgetbuddy.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
@@ -26,7 +27,25 @@ public class BudgetDao {
         return budgets;
     }
 
-    public void delete(Budget budget){
-        repository.delete(budget);
+    public boolean deleteBudgetById(int id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+    // TODO -- Finish this
+    public Budget updateBudget(int id, Budget updatedBudget) {
+        return repository.findById(id)
+                .map(budget -> {
+                    updatedBudget.setExpenseName(updatedBudget.getExpenseName());
+                    updatedBudget.setExpenseAmount(updatedBudget.getExpenseAmount());// Updates the field
+                    updatedBudget.setBudget_period(updatedBudget.getBudget_period());
+                    updatedBudget.setAmount_to_save(updatedBudget.getAmount_to_save());
+                    updatedBudget.setEmergency_fund(updatedBudget.getEmergency_fund());
+                    updatedBudget.setDueDate(updatedBudget.getDueDate());
+                    return repository.save(budget);
+                })
+                .orElse(null); // Return null if the user doesn't exist
     }
 }

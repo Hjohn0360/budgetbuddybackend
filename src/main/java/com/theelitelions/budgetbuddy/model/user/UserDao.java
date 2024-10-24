@@ -25,7 +25,27 @@ public class UserDao {
         return users;
     }
 
-    public void delete(User user){
-        repository.delete(user);
+    public boolean deleteUserById(int id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
+    public User updateUser(int id, User updatedUser) {
+        return repository.findById(id)
+                .map(user -> {
+                    user.setFirst_name(updatedUser.getFirst_Name()); // Updates the fields
+                    user.setLast_name(updatedUser.getLast_Name());
+                    user.setAge(updatedUser.getAge());
+                    user.setUsername(updatedUser.getUsername());
+                    user.setPhoneNumber(updatedUser.getPhoneNumber());
+                    user.setAddress(updatedUser.getAddress());
+                    user.setEmail(updatedUser.getUsername());
+                    user.setPassword(updatedUser.getPassword());
+                    return repository.save(user);
+                })
+                .orElse(null); // Return null if the user doesn't exist
     }
 }
