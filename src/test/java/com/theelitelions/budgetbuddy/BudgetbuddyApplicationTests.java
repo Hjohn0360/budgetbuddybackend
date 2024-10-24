@@ -4,6 +4,10 @@ import com.theelitelions.budgetbuddy.model.account.Account;
 import com.theelitelions.budgetbuddy.model.account.AccountDao;
 import com.theelitelions.budgetbuddy.model.bill.Bill;
 import com.theelitelions.budgetbuddy.model.bill.BillDao;
+import com.theelitelions.budgetbuddy.model.bill_reminder.BillReminder;
+import com.theelitelions.budgetbuddy.model.bill_reminder.BillReminderDao;
+import com.theelitelions.budgetbuddy.model.invested_company.InvestedCompany;
+import com.theelitelions.budgetbuddy.model.invested_company.InvestedCompanyDao;
 import com.theelitelions.budgetbuddy.model.transaction.Transaction;
 import com.theelitelions.budgetbuddy.model.transaction.TransactionDao;
 import org.junit.jupiter.api.Test;
@@ -25,7 +29,10 @@ class BudgetbuddyApplicationTests {
 	//private InvestmentPortfolioDao investmentPortfolioDao;
 	//private BillDao billDao;
 	//private AccountDao accountDao;
-	private TransactionDao transactionDao;
+	//private TransactionDao transactionDao;
+	//private InvestedCompanyDao investedCompanyDao;
+	private BillReminderDao billReminderDao;
+
 
 
 	//The test won't run if it's commented out
@@ -222,5 +229,45 @@ class BudgetbuddyApplicationTests {
 	}
 
  */
+/*
 
+	//@Test
+	void addInvestedCompaniesTest() {
+		InvestedCompany investedCompany = new InvestedCompany();
+		investedCompany.setAnnual_return(900.1);
+		investedCompany.setInvested_amount(1002.96);
+		investedCompany.setDividend_value(4569.09);
+		investedCompany.setName("CTP");
+		investedCompanyDao.save(investedCompany);
+	}
+
+	//@Test
+	void getAllInvestedCompaniesThenDeleteThem(){
+		List<InvestedCompany> investedCompanies = investedCompanyDao.getAllInvestedCompanies();
+		for(InvestedCompany investedCompany : investedCompanies){
+			investedCompanyDao.delete(investedCompany);
+		}
+	}
+
+ */
+
+	/*
+	//@Test
+	void addBillRemindersTest() {
+		BillReminder billReminder = new BillReminder();
+		billReminder.setBill_id(2);
+		billReminder.setReminder_time_before_due_date(9);
+		billReminderDao.save(billReminder);
+	}
+
+	@Test
+	void getAllBillRemindersThenDeleteThem(){
+		List<BillReminder> billReminders = billReminderDao.getAllBillReminders();
+		for(BillReminder billReminder : billReminders){
+			billReminderDao.delete(billReminder);
+		}
+	}
+
+
+	 */
 }
