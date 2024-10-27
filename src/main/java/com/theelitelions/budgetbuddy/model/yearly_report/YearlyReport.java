@@ -19,6 +19,14 @@ public class YearlyReport {
     private double what_if_savings_amount;
     private int bank_account_id;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public double getAnnual_amount_made() {
         return annual_amount_made;
     }

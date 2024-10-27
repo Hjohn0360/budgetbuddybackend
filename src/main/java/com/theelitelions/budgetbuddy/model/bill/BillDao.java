@@ -25,7 +25,26 @@ public class BillDao {
         return bills;
     }
 
-    public void delete(Bill bill){
-        repository.delete(bill);
+    // TODO -- Test Delete and Update methods
+    public boolean deleteBillById(int id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
+    public Bill updateBill(int id, Bill updatedBill) {
+        return repository.findById(id)
+                .map(bill -> {
+                    bill.setPrice(updatedBill.getPrice()); // Updates the fields
+                    bill.setRecurring_payment(updatedBill.isRecurring_payment());
+                    bill.setAutomatic_payments_on(updatedBill.isAutomatic_payments_on());
+                    bill.setName(updatedBill.getName());
+                    bill.setDue_date(updatedBill.getDue_date());
+                    bill.setSign_up_date(updatedBill.getSign_up_date());
+                    return repository.save(bill);
+                })
+                .orElse(null); // Return null if the bill doesn't exist
     }
 }

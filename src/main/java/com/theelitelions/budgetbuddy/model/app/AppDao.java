@@ -27,7 +27,5 @@ public class AppDao {
         return apps;
     }
 
-    public void delete(App app){
-        repository.delete(app);
-    }
+    // TODO -- Delete and Update methods(Keyron)
 }

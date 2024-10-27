@@ -34,16 +34,22 @@ public class BudgetDao {
         }
         return false;
     }
-    // TODO -- Finish this
+
     public Budget updateBudget(int id, Budget updatedBudget) {
         return repository.findById(id)
                 .map(budget -> {
-                    updatedBudget.setExpenseName(updatedBudget.getExpenseName());
-                    updatedBudget.setExpenseAmount(updatedBudget.getExpenseAmount());// Updates the field
-                    updatedBudget.setBudget_period(updatedBudget.getBudget_period());
-                    updatedBudget.setAmount_to_save(updatedBudget.getAmount_to_save());
-                    updatedBudget.setEmergency_fund(updatedBudget.getEmergency_fund());
-                    updatedBudget.setDueDate(updatedBudget.getDueDate());
+                    budget.setExpenseName(updatedBudget.getExpenseName());
+                    budget.setExpenseAmount(updatedBudget.getExpenseAmount());// Updates the field
+                    budget.setBudget_period(updatedBudget.getBudget_period());
+                    budget.setAmount_to_save(updatedBudget.getAmount_to_save());
+                    budget.setEmergency_fund(updatedBudget.getEmergency_fund());
+                    budget.setDueDate(updatedBudget.getDueDate());
+                    budget.setAmount_to_invest(updatedBudget.getAmount_to_invest());
+                    budget.setApp_id(updatedBudget.getApp_id());
+                    budget.setAutoPay(updatedBudget.isAutoPay());
+                    budget.setCheck_id(updatedBudget.getCheck_id());
+                    budget.setUser_id(updatedBudget.getUser_id());
+                    budget.setSpending_limit(updatedBudget.getSpending_limit());
                     return repository.save(budget);
                 })
                 .orElse(null); // Return null if the user doesn't exist

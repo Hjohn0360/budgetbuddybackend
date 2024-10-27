@@ -23,7 +23,5 @@ public class InvestmentPortfolioDao {
         return investmentPortfolios;
     }
 
-    public void delete(InvestmentPortfolio investmentPortfolio) {
-        repository.delete(investmentPortfolio);
-    }
+    // TODO -- Delete and Update methods(Keyron)
 }

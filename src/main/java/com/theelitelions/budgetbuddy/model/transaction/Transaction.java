@@ -19,6 +19,14 @@ public class Transaction {
     private LocalDate dueDate;
     private boolean isAutoPay;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getExpenseName() {
         return expenseName;
     }

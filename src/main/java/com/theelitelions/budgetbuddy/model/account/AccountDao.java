@@ -1,5 +1,6 @@
 package com.theelitelions.budgetbuddy.model.account;
 
+import com.theelitelions.budgetbuddy.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.util.Streamable;
 import org.springframework.stereotype.Service;
@@ -25,7 +26,25 @@ public class AccountDao {
         return accounts;
     }
 
-    public void delete(Account account){
-        repository.delete(account);
+    public boolean deleteAccountById(int id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
+    public Account updateAccount(int id, Account updatedAccount) {
+        return repository.findById(id)
+                .map(account -> {
+                    account.setYearlyIncome(updatedAccount.getYearlyIncome()); // Updates the fields
+                    account.setGoal(updatedAccount.getGoal());
+                    account.setInvestmentName(updatedAccount.getInvestmentName());
+                    account.setCurrentSavings(updatedAccount.getCurrentSavings());
+                    account.setYearlyExpenses(updatedAccount.getYearlyExpenses());
+                    account.setInvestmentAmount(updatedAccount.getInvestmentAmount());
+                    return repository.save(account);
+                })
+                .orElse(null); // Return null if the user doesn't exist
     }
 }

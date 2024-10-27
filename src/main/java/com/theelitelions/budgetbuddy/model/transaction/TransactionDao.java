@@ -37,11 +37,11 @@ public class TransactionDao {
     public Transaction updateTransaction(int id, Transaction updatedTransaction) {
         return repository.findById(id)
                 .map(transaction -> {
-                    updatedTransaction.setExpenseName(updatedTransaction.getExpenseName()); // Updates the fields
-                    updatedTransaction.setExpenseAmount(updatedTransaction.getExpenseAmount());
-                    updatedTransaction.setDueDate(updatedTransaction.getDueDate());
-                    updatedTransaction.setCategory(updatedTransaction.getCategory());
-                    updatedTransaction.setSubCategory(updatedTransaction.getSubCategory());
+                    transaction.setExpenseName(updatedTransaction.getExpenseName()); // Updates the fields
+                    transaction.setExpenseAmount(updatedTransaction.getExpenseAmount());
+                    transaction.setDueDate(updatedTransaction.getDueDate());
+                    transaction.setCategory(updatedTransaction.getCategory());
+                    transaction.setSubCategory(updatedTransaction.getSubCategory());
                     return repository.save(transaction);
                 })
                 .orElse(null); // Return null if the user doesn't exist

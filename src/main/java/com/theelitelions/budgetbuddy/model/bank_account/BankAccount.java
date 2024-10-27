@@ -24,6 +24,13 @@ public class BankAccount {
     private LocalDateTime check_frequency;
     private LocalDateTime date_paid;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getUser_id() {
         return user_id;

@@ -26,7 +26,5 @@ public class InvestedCompanyDao {
         return investedCompany;
     }
 
-    public void delete(InvestedCompany investedCompany){
-        repository.delete(investedCompany);
-    }
+    // TODO -- Delete and update methods(Keyron)
 }

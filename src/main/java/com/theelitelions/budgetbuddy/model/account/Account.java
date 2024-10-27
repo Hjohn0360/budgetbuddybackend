@@ -17,6 +17,14 @@ public class Account {
     private float yearlyIncome;
     private float yearlyExpenses;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public float getGoal() {
         return goal;
     }

@@ -25,7 +25,5 @@ public class BillReminderDao {
         return billReminders;
     }
 
-    public void delete(BillReminder billReminder){
-        repository.delete(billReminder);
-    }
+    // TODO -- Delete and Update methods(Keyron)
 }
