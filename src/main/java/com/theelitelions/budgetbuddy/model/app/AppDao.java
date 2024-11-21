@@ -1,5 +1,6 @@
 package com.theelitelions.budgetbuddy.model.app;
 
+import com.theelitelions.budgetbuddy.model.account.Account;
 import com.theelitelions.budgetbuddy.model.user.User;
 import com.theelitelions.budgetbuddy.model.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +29,27 @@ public class AppDao {
     }
 
     // TODO -- Delete and Update methods(Keyron)
+    public boolean deleteAppById(int id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
+    public App updateApp(int id, App updatedApp) {
+        return repository.findById(id)
+                .map(app -> {
+                    app.setName(updatedApp.getName()); // Updates the fields
+                    app.setBlocked(updatedApp.isBlocked());
+                    app.setSpending_limit_exceeded(updatedApp.isSpending_limit_exceeded());
+                    app.setSpending_limit(updatedApp.getSpending_limit());
+                    app.setSpending_limit(updatedApp.getSpending_limit());
+                    app.setLimit_reset(updatedApp.isLimit_reset());
+                    app.setLimit_ignored(updatedApp.isLimit_ignored());
+                    app.setIgnore_limit_amount(updatedApp.getIgnore_limit_amount());
+                    return repository.save(app);
+                })
+                .orElse(null); // Return null if the user doesn't exist
+    }
 }

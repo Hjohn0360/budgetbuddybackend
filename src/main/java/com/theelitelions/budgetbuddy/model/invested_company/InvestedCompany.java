@@ -75,7 +75,7 @@ public class InvestedCompany {
     }
 
     public void setInvested_amount(double invested_amount) {
-        this.invested_amount= invested_amount;
+        this.invested_amount = invested_amount;
     }
 
     @Override
