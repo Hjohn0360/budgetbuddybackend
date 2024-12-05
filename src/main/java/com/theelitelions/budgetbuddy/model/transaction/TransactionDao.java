@@ -26,12 +26,17 @@ public class TransactionDao {
         return transactions;
     }
 
+
     public boolean deleteTransactionById(int id) {
         if (repository.existsById(id)) {
             repository.deleteById(id);
             return true;
         }
         return false;
+    }
+
+    public void deleteAllTransactions() {
+        repository.deleteAll();
     }
 
     public Transaction updateTransaction(int id, Transaction updatedTransaction) {
@@ -46,4 +51,5 @@ public class TransactionDao {
                 })
                 .orElse(null); // Return null if the user doesn't exist
     }
+
 }

@@ -25,7 +25,6 @@ public class BillDao {
         return bills;
     }
 
-    // TODO -- Test Delete and Update methods
     public boolean deleteBillById(int id) {
         if (repository.existsById(id)) {
             repository.deleteById(id);

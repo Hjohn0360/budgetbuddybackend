@@ -23,10 +23,10 @@ public class User {
     private int phone_number;
     private String password;
     private String address;
-    // -- Date Account was created
+    // NOTE -- Date Account was created
     @CreationTimestamp
     private LocalDateTime created_at;
-    // -- Date Account Info was modified
+    // NOTE -- Date Account Info was modified
     @UpdateTimestamp
     private LocalDateTime modified_at;
 

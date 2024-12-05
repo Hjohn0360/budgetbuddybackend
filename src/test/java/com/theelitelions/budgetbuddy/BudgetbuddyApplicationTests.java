@@ -10,6 +10,8 @@ import com.theelitelions.budgetbuddy.model.invested_company.InvestedCompany;
 import com.theelitelions.budgetbuddy.model.invested_company.InvestedCompanyDao;
 import com.theelitelions.budgetbuddy.model.transaction.Transaction;
 import com.theelitelions.budgetbuddy.model.transaction.TransactionDao;
+import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReport;
+import com.theelitelions.budgetbuddy.model.yearly_report.YearlyReportDao;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,9 +31,9 @@ class BudgetbuddyApplicationTests {
 	//private InvestmentPortfolioDao investmentPortfolioDao;
 	//private BillDao billDao;
 	//private AccountDao accountDao;
-	//private TransactionDao transactionDao;
+	private TransactionDao transactionDao;
 	//private InvestedCompanyDao investedCompanyDao;
-	private BillReminderDao billReminderDao;
+	//private BillReminderDao billReminderDao;
 
 
 
@@ -105,18 +107,20 @@ class BudgetbuddyApplicationTests {
 
 	 */
 
-	/*
-	//@Test
+/*
+	@Test
 	void addYearlyReportTest(){
 		YearlyReport yearlyReport = new YearlyReport();
-		yearlyReport.setAnnual_amount_made(150000);
-		yearlyReport.setAmount_made_from_investments(15000);
-		yearlyReport.setAnnual_amount_saved(60000);
-		yearlyReport.setAnnual_amount_spent(35000);
+		yearlyReport.setAnnual_amount_made(150000.97);
+		yearlyReport.setAmount_made_from_investments(15000.32);
+		yearlyReport.setAnnual_amount_saved(60000.91);
+		yearlyReport.setAnnual_amount_spent(35000.22);
 		yearlyReport.setEnd_of_the_year(true);
 		yearlyReportDao.save(yearlyReport);
 	}
 
+ */
+/*
 	//@Test
 	void getAllYearlyReportsThenDeleteThem(){
 		List<YearlyReport> yearlyReports = yearlyReportDao.getAllYearlyReports();
@@ -125,7 +129,9 @@ class BudgetbuddyApplicationTests {
 		}
 	}
 
-	 */
+ */
+
+
 /*
 	//@Test
 	void addBankAccountTest(){
@@ -209,7 +215,7 @@ class BudgetbuddyApplicationTests {
 
 	 */
 
-/*
+
 	//@Test
 	void addTransactionTest() {
 		Transaction transaction = new Transaction();
@@ -219,14 +225,16 @@ class BudgetbuddyApplicationTests {
 		transaction.setAutoPay(false);
 		transactionDao.save(transaction);
 	}
-
-	@Test
+/*
+	//@Test
 	void getAllTransactionsThenDeleteThem(){
 		List<Transaction> transactions = transactionDao.getAllTransactions();
 		for(Transaction transaction : transactions){
 			transactionDao.delete(transaction);
 		}
 	}
+
+
 
  */
 /*

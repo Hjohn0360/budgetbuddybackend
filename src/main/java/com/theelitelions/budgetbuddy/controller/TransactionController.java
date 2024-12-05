@@ -2,7 +2,6 @@ package com.theelitelions.budgetbuddy.controller;
 
 import com.theelitelions.budgetbuddy.model.transaction.Transaction;
 import com.theelitelions.budgetbuddy.model.transaction.TransactionDao;
-import com.theelitelions.budgetbuddy.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,6 +34,12 @@ public class TransactionController {
         } else {
             return ResponseEntity.notFound().build(); // 404 Not Found
         }
+    }
+
+    @DeleteMapping("/transaction/deleteAll")
+    public ResponseEntity<String> deleteAllTransactions() {
+        transactionDao.deleteAllTransactions();
+        return ResponseEntity.ok("All transactions have been successfully deleted.");
     }
 
     @PutMapping("/transaction/update/{id}")
