@@ -36,12 +36,6 @@ public class TransactionController {
         }
     }
 
-    @DeleteMapping("/transaction/deleteAll")
-    public ResponseEntity<String> deleteAllTransactions() {
-        transactionDao.deleteAllTransactions();
-        return ResponseEntity.ok("All transactions have been successfully deleted.");
-    }
-
     @PutMapping("/transaction/update/{id}")
     public ResponseEntity<Transaction> updateTransaction(@PathVariable int id, @RequestBody Transaction updatedTransaction) {
         Transaction transaction = transactionDao.updateTransaction(id, updatedTransaction);

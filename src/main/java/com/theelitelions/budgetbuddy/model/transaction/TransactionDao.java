@@ -35,10 +35,6 @@ public class TransactionDao {
         return false;
     }
 
-    public void deleteAllTransactions() {
-        repository.deleteAll();
-    }
-
     public Transaction updateTransaction(int id, Transaction updatedTransaction) {
         return repository.findById(id)
                 .map(transaction -> {
